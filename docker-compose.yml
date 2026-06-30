@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: elijays-pos-postgres
+    environment:
+      POSTGRES_USER: elijays
+      POSTGRES_PASSWORD: elijays_dev
+      POSTGRES_DB: elijays_pos
+    ports:
+      - "5433:5432"
+    volumes:
+      - elijays_pos_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U elijays -d elijays_pos"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: elijays-pos-redis
+    ports:
+      - "6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: elijays-pos-api
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://elijays:elijays_dev@postgres:5432/elijays_pos?sslmode=disable
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: change-me-in-production
+      PORT: "8080"
+    ports:
+      - "8080:8080"
+    profiles:
+      - full
+
+volumes:
+  elijays_pos_pg:
