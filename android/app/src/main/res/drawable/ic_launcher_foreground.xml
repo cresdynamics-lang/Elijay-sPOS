@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- White clothing hanger icon in center -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,2A3,3 0 0,0 9,5A3,3 0 0,0 9.8,6.8L3,13A1,1 0 0,0 3.7,14.7H20.3A1,1 0 0,0 21,13L14.2,6.8A3,3 0 0,0 15,5A3,3 0 0,0 12,2M12,4A1,1 0 0,1 13,5A1,1 0 0,1 12,6A1,1 0 0,1 11,5A1,1 0 0,1 12,4M12,9L17.5,13.5H6.5L12,9Z" />
+</vector>
