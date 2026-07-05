@@ -8,8 +8,24 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Elijay's Men's Wear POS",
+  title: "Elijay's POS",
   description: "Multi-shop point of sale for Elijay's Men's Wear",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Elijay's POs",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+};
+
+export const viewport = {
+  themeColor: "#1A1A1A",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({

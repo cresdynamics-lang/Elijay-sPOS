@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="512" height="512">
+  <!-- Background (entire canvas filled to support masking) -->
+  <rect width="108" height="108" fill="#1A1A1A" />
+  <!-- Hanger icon shrunk to be safely within the maskable safe zone (inner 60% circle) -->
+  <svg x="27.6" y="27.6" width="52.8" height="52.8" viewBox="0 0 24 24">
+    <path fill="#FFFFFF" d="M12,2A3,3 0 0,0 9,5A3,3 0 0,0 9.8,6.8L3,13A1,1 0 0,0 3.7,14.7H20.3A1,1 0 0,0 21,13L14.2,6.8A3,3 0 0,0 15,5A3,3 0 0,0 12,2M12,4A1,1 0 0,1 13,5A1,1 0 0,1 12,6A1,1 0 0,1 11,5A1,1 0 0,1 12,4M12,9L17.5,13.5H6.5L12,9Z" />
+  </svg>
+</svg>

@@ -12,7 +12,11 @@ export function proxy(request: NextRequest) {
     pathname.startsWith("/_next") ||
     pathname.startsWith("/favicon") ||
     pathname.endsWith(".svg") ||
-    pathname.endsWith(".ico");
+    pathname.endsWith(".ico") ||
+    pathname === "/manifest.webmanifest" ||
+    pathname === "/sw.js" ||
+    pathname.startsWith("/swe-") ||
+    pathname.endsWith(".js.map");
 
   if (isStatic) {
     return NextResponse.next();
